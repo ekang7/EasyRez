@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 391 491" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>EasyIMG</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="383" height="483" rx="8"></rect>
+        <filter x="-1.8%" y="-1.0%" width="103.7%" height="102.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-324.000000, -1391.000000)">
+            <g id="EasyIMG" transform="translate(328.000000, 1393.000000)">
+                <g id="Rectangle">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <text id="EASY" font-family="KannadaMN-Bold, Kannada MN" font-size="36" font-weight="bold" letter-spacing="-0.229687452" fill="#4A4A4A">
+                    <tspan x="144.251367" y="49">EASY</tspan>
+                </text>
+                <text id="1.-Submit-your-resum" font-family="KannadaMN-Bold, Kannada MN" font-size="22" font-weight="bold" letter-spacing="-0.140364587" fill="#4A4A4A">
+                    <tspan x="65" y="138">1. Submit your resume</tspan>
+                    <tspan x="65" y="164"></tspan>
+                    <tspan x="65" y="190">2. Edit the entries</tspan>
+                    <tspan x="65" y="216"></tspan>
+                    <tspan x="65" y="242">3. Upload images</tspan>
+                    <tspan x="65" y="268"></tspan>
+                    <tspan x="65" y="294">4. Click GENERATE!</tspan>
+                    <tspan x="65" y="320"></tspan>
+                    <tspan x="65" y="346">5. And</tspan>
+                    <tspan x="133.477148" y="346" font-family="Times-Bold, Times">… DONE</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

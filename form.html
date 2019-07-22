@@ -1,0 +1,118 @@
+<html lang="en">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>EasyRez | Form</title>
+        <link rel="stylesheet" href="form.css">
+        <script src="form.js"> 
+        </script>
+        <script>function writeToText() {
+                var text = document.getElementsByClassName("file-input").innerHTML;
+                fs.writeFile ("test.txt", text, function (err) {
+                if (err) {
+                        return console.log (error);
+                }
+                console.log ("the file was saved");
+                });
+
+        } </script>
+        <script type="module" src="node-modules/resume-parser/src/index.js">
+        
+                ResumeParser
+                        .parseResumeUrl('') // url
+                        .then(data => {
+                          const fs = require('fs');
+                          fs.writeFile("output-parsed.json", JSON.stringify(data), function(err) {
+                              if(err) {
+                                  return console.log(err);
+                              }
+                              console.log("The file was saved!");
+                          }); 
+                        })
+                        .catch(error => {
+                          console.error(error);
+                        });  
+        </script>
+</head>
+
+<body>
+        <div class="homeDiv">
+                <img src="images/bckgForm.png" id="homeBackgroundIMG" />
+                <a href="index.html">
+                        <p id="projectName">EasyRez</p>
+                </a>
+                <div id="formOptionsFlex">
+                        <div class="upload-btn-wrapper input-group"
+                                style="width: 353px; height: 163px;background: #FFFFFF;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);border-radius: 7px;">
+                                <textarea id="resumeInputer" name="avatar"
+                                placeholder="" style="text-align:center"class="file-input"></textarea>
+                                <p style="font-size: 24px;color: #000000; display: bloc; margin: auto; ">Paste Resume</p>
+                        </div>
+                        <p id="orTEXT">OR</p><a href="javascript:document.getElementById('formDiv').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'})"><img src="images/manualBTN.svg" /></a>
+                </div>
+                <btn onclick="writeToText()" class="file-submit btn" id="nextBTNHeader"><a href="javascript:document.getElementById('formDiv').scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'})"><img
+                                src="images/nextBTN.svg" id="nextBTNHeaderI" /></a></btn>
+        </div>
+        <div id="formDiv" class="homeDiv">
+                <p class="formHeadline">Basic Information</p>
+                <form class="formMain">
+                        <input type="text" name="nameOfUser" placeholder="Full Name..." id="nameOfUser"><br>
+                        <input type="text" name="positionOfUser" placeholder="Position..." id="positionOfUser"><br>
+                        <input type="text" name="descOfUser" placeholder="About You..." id="descOfUser"><br>
+                        <label></label>
+                        <input type = "file" id = "faceInput"><br>
+                </form>
+                <p class="formHeadline">Contact Information</p>
+                <form class="formMain">
+                        <input type="text" name="phoneOfUser" placeholder="Phone Number..." id="phoneOfUser"><br>
+                        <input type="text" name="emailOfUser" placeholder="Email..." id="emailOfUser"><br>
+                        <input type="text" name="socialmediaOfUser" placeholder="Social Media..." id="socialmediaOfUser"><br>
+
+                </form>
+                <p class="formHeadline">Skills</p>
+                <form class="formMain">
+                        <div id ="skillz">
+                        <input type="text" name="skillOfUser1" placeholder="Skills (eg. C#, Javascript, HTML)..."
+                                id="skillOfUser1"><br>
+                                <input type = "button" value = "+" onclick = "newSkill();" id ="skillButton">
+                
+                        </div>
+                        </form>
+                <p class="formHeadline">Education</p>
+                <form class="formMain">
+                    <div id = "eduz">
+                        <input type="text" name="edu1" placeholder="Science, Math, English, Computers, ..."
+                                id="edu1"><br>
+                                <input type = "button" value = "+" onclick = "newEducation();" id ="educationButton">
+                            </div>
+                            </form>
+                <p class="formHeadline">Experience</p>
+                <form class="formMain">
+                    <div id = "expz">
+                        <input type="text" name="exp1" placeholder="Jobs, internships, volunteer, services, ..."
+                                id="exp1"><br>
+                                <input type = "button" value = "+" onclick = "newExp();" id ="expButton">
+                            </div>
+                </form>
+                <p class="formHeadline">Projects</p>
+                <form class="formMain">
+                    <div id = "projectz">
+                        <input type="text" name="proj1" placeholder="Projects (e.g. building a website, making a robot, making a drawing, ..."
+                                id="proj1">
+                                <input type = "button" value = "+" onclick = "newProj();" id = "projButton">
+                            </div>
+                </form>
+                <div class = "images" id = "images">
+                        <input type = "file" ><br>
+                        <input type = "button" value = "+" onclick = "newPhoto();" id ="photoButton">
+            </div>
+                <a href="javascript:generateWebsite()" style="display: block; margin: auto; text-align: center;"><img src="images/GenerateBTN.svg"  width="200px"/></a>
+                 <div id="footer">
+                        <p id="rightsText">© EasyRez 2019</p>
+        </div>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+
+</html>

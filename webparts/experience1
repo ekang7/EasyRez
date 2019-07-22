@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "experience-1"; style = "background-color:black;width:100%;height:27vw;">
+        <div style = "margin:0 0 0 0;padding: 0 0 0 0;float:left;width:48.7vw;height:27vw;background-color:aquamarine;">
+            <img src = "file:///C:/Users/kenwa/Desktop/DavidPrograms/web%20dev/CinciHack/ozudbavvnzkqrzkh1fvp.webp" alt = "servers" style = "width:100%;height:100%;">
+       </div>
+        <div style = "margin:0 0 0 0;padding: 0 0 0 0;float:right;width:48.7vw;height:27vw;background-color:rgb(101, 0, 121);">
+            <ul style = "width:100%;height:100%;color:#c4c9c7;font-size:2em;text-align: center;list-style-image: url('C:\Users\kenwa\Desktop\DavidPrograms\web dev\CinciHack\download.png')">
+                <li>adgihohgeihgaerioaeohiogaioaer</li>
+                <li>idfhhfghioaihoaenioerniobrniono</li>
+                <li>adsjgheriwhger</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

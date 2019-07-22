@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title id = "title">EasyRez</title>
+    </head>
+    <body>
+        <div class="homeDiv">
+            <img src="images/homePageBackground.png" id="homeBackgroundIMG"/>
+            <p id="projectName">EasyRez</p>
+            <p id="motto">The Way to Build a Portfolio.</p>
+            <a href="form.html" id="beginBTNA"><img src="images/beginBTN.svg"/></a>
+            <a href="javascript:scrollToView()" id = "toAboutBTN"><img src="images/DownBTN.svg" id="toAboutBTNIMG"/></a>
+        </div>
+        <div class="homeDiv" id="aboutDiv">
+            <p id="aboutTitle">ABOUT</p>
+            <p id="aboutMotto">EasyRez allows you to create websites <span style="color:#F5A623">easily</span> and for <span style="color:#F5A623">free</span></p>
+            <div id="aboutDivSVG">
+                <img src="images/easyIMG.svg" class="aboutSVG"/>
+                <img src="images/freeIMG.svg" class="aboutSVG"/>
+            </div>
+        </div>
+        <div id="footer">
+            <p id="rightsText">© EasyRez 2019</p>
+        </div>
+        
+        
+        <!--<div style="display: flex;flex-wrap: wrap;justify-content: space-around;position: fixed;bottom: 0;left: 0;width: 100%;background-color:#F5A623;height:100px;">
+            <p style="font-family: Roboto;font-size: 36px;color: #FFFFFF;text-align: center; line-height: 100px;">Ready to Export?</p>
+            <a href="javascript:download()" ><img src="images/downloadBTN.svg" style="width: 200px; position: relative;top: 50%;transform: translateY(-50%);"/></a>
+        </div>-->
+        
+        
+        <script>
+            function scrollToView() {
+                document.getElementById("aboutDiv").scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"})
+            }
+            
+            
+            /*function download() {
+                var element = document.createElement("a");
+                element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(document.getElementById("aboutDiv").innerHTML));
+                element.setAttribute('download', "ugo.html");
+
+                element.style.display = 'none';
+                document.body.appendChild(element);
+
+                element.click();
+
+                document.body.removeChild(element);
+            }*/
+            
+            
+        </script>
+    </body>
+</html>

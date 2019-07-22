@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="191px" height="55px" viewBox="0 0 191 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>BeginBTN</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-675.000000, -536.000000)">
+            <g id="BeginBTN" transform="translate(675.000000, 536.000000)">
+                <rect id="Rectangle" fill="#F5A623" x="0" y="0" width="191" height="55" rx="27.5"></rect>
+                <text id="Begin" font-family="DINAlternate-Bold, DIN Alternate" font-size="36" font-weight="bold" letter-spacing="-0.2296875" fill="#FFFFFF">
+                    <tspan x="53.2705078" y="41">Begin</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
