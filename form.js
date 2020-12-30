@@ -37,6 +37,7 @@ function newSkill(){
     let clone = elem.cloneNode(true);
     elem.parentNode.removeChild(elem);
  const skills =document.getElementById('skillz');
+ 
  const skill = document.createElement("input");
  skill.setAttribute('id', 'skillOfUser'+(theskillnum+1));
  theskillnum++;
@@ -165,17 +166,26 @@ function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 const colorschemes = [["#541D25","#C0103E","#D98835","#F8CFC7","#73C27C"],["#D84114","#E7CA6B","#BEBD70","#52746A","#2A3643"],["#221C1F","#AF0A6A","#E6638E","#C47669","#D7D576"],["#151A21","#232C33","#2A5049","#A8BD82","#E5E0B8"],["#5C3C37","#718B88","#4FC199","#CAF677","#D7C949"],["#253539","#36BF89","#CDDDB4","#2D3637","#CB4430"]];
-function generateWebsite() {
-  skillToArray(document.getElementById("skillOfUser1").value)
-  name = document.getElementById("nameOfUser").value
-  position = document.getElementById("positionOfUser").value
-  desc = document.getElementById("descOfUser").value
-  email = document.getElementById("emailOfUser").value
-  phoneNum = document.getElementById("phoneOfUser").value
-  educations = document.forms[3].elements
-  experiences = document.forms[4].elements
-  projects = document.forms[5].elements
+const toBase64 = file => new Promise((resolve, reject) => {
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = () => resolve(reader.result);
+  reader.onerror = error => reject(error);
+});
 
+async function generateWebsite() {
+  //skillToArray(document.getElementById("skillOfUser1").value);
+  skills = document.forms[2].elements; 
+  name = document.getElementById("nameOfUser").value;
+  position = document.getElementById("positionOfUser").value;
+  desc = document.getElementById("descOfUser").value;
+  email = document.getElementById("emailOfUser").value;
+  phoneNum = document.getElementById("phoneOfUser").value;
+  educations = document.forms[3].elements;
+  experiences = document.forms[4].elements;
+  projects = document.forms[5].elements;
+  profilepic = document.getElementById("faceInput").files[0];
+  profilepic = await toBase64(profilepic); 
   var colorscheme = colorschemes[Math.floor(Math.random()*6)];
 
   let headerOp = [`<div id="header-section" style="
@@ -203,7 +213,7 @@ function generateWebsite() {
       opacity:30%;
       z-index: -1;">
   </div>
-  <img id="prof-pic-person" src="https://scontent.fluk1-1.fna.fbcdn.net/v/t1.15752-9/s2048x2048/48371082_371278293701233_8278407570205442048_n.png?_nc_cat=104&_nc_oc=AQmxG2ppJaOcbpND9rbe29s0tbBPLIXXEPSSAU_P9m25Kw0C2CCKNFGKR_Yad0RNL-Q&_nc_ht=scontent.fluk1-1.fna&oh=2bce2872e61fa5b354aa37808af380a4&oe=5DAD1257" style="
+  <img id="prof-pic-person" src="`+profilepic+`" style="
       border-radius: 50%;
       border: 6px solid `+colorscheme[2]+`;
       width: 185px;
@@ -628,17 +638,17 @@ overflow: auto;"><div style="max-width: 350px; width: 80%;display:block; margin:
                 </g>
             </g>
             <text id="+-999-999-9999" font-family="Times-Bold, Times" font-size="36" font-weight="bold" fill="#4A4A4A">
-                <tspan x="21.2431641" y="315">+ 999 999 9999</tspan>
+                <tspan x="21.2431641" y="315">`+phoneNum+`</tspan>
             </text>
             <text id="@ugodosreis" font-family="Times-Bold, Times" font-size="36" font-weight="bold" fill="#4A4A4A">
-                <tspan x="21.0625" y="368">@ugodosreis</tspan>
+                <tspan x="21.0625" y="368">`+email+`</tspan>
             </text>
             <circle id="Oval" fill="#306099" cx="284" cy="148" r="118"></circle>
             <text id="Ugo" font-family="Times-Bold, Times" font-size="48" font-weight="bold" fill="#FFFFFF">
-                <tspan x="233.167969" y="136">Ugo</tspan>
+                <tspan x="233.167969" y="136">`+name+`</tspan>
             </text>
             <text id="Dos-Reis" font-family="Times-Bold, Times" font-size="48" font-weight="bold" fill="#FFFFFF">
-                <tspan x="195.335938" y="194">Dos Reis</tspan>
+                <tspan x="195.335938" y="194">deleted last name here</tspan> 
             </text>
         </g>
     </g>
@@ -694,17 +704,17 @@ overflow: auto;"><div style="max-width: 350px; width: 80%;display:block; margin:
                     </g>
                 </g>
                 <text id="Ugo" font-family="Times-Bold, Times" font-size="48" font-weight="bold" fill="#FFFFFF">
-                    <tspan x="233.167969" y="128">Ugo</tspan>
+                    <tspan x="233.167969" y="128">`+name+`</tspan>
                 </text>
                 <text id="Dos-Reis" font-family="Times-Bold, Times" font-size="48" font-weight="bold" fill="#FFFFFF">
-                    <tspan x="195.335938" y="186">Dos Reis</tspan>
+                    <tspan x="195.335938" y="186"></tspan>
                 </text>
             </g>
             <text id="+-999-999-9999" font-family="LucidaGrande-Bold, Lucida Grande" font-size="24" font-weight="bold" letter-spacing="-0.5" fill="#FFFFFF">
-                <tspan x="177.429688" y="324">+ 999 999 9999</tspan>
+                <tspan x="177.429688" y="324">`+phoneNum+`</tspan>
             </text>
             <text id="@ugodosreis" font-family="LucidaGrande-Bold, Lucida Grande" font-size="24" font-weight="bold" letter-spacing="-0.5" fill="#FFFFFF">
-                <tspan x="197.914062" y="362">@ugodosreis</tspan>
+                <tspan x="197.914062" y="362">`+email+`</tspan>
             </text>
         </g>
     </g>
@@ -767,16 +777,16 @@ overflow: auto;"><div style="max-width: 350px; width: 80%;display:block; margin:
                 </g>
             </g>
             <text id="Ugo-Dos-Reis" font-family="LucidaGrande-Bold, Lucida Grande" font-size="24" font-weight="bold" letter-spacing="-0.5" fill="#FACB0B">
-                <tspan x="29.2109375" y="270">Ugo Dos Reis</tspan>
+                <tspan x="29.2109375" y="270">`+name+`</tspan>
             </text>
             <text id="Software-Developer" font-family="LucidaGrande-Bold, Lucida Grande" font-size="18" font-weight="bold" letter-spacing="-0.37499994" fill="#FACB0B">
-                <tspan x="29.1938471" y="302">Software Developer</tspan>
+                <tspan x="29.1938471" y="302">`+desc+`</tspan>
             </text>
             <text id="+-999-999-9999" font-family="LucidaGrande-Bold, Lucida Grande" font-size="18" font-weight="bold" letter-spacing="-0.3749999" fill="#0E0C23">
-                <tspan x="343.697265" y="164">+ 999 999 9999</tspan>
+                <tspan x="343.697265" y="164">`+phoneNum+`</tspan>
             </text>
             <text id="@ugodosreis" font-family="LucidaGrande-Bold, Lucida Grande" font-size="18" font-weight="bold" letter-spacing="-0.3749999" fill="#0E0C23">
-                <tspan x="360.060546" y="195">@ugodosreis</tspan>
+                <tspan x="360.060546" y="195">`+email+`</tspan>
             </text>
         </g>
     </g>
@@ -794,7 +804,8 @@ document.getElementById("job-header").innerHTML = position
 document.getElementById("about-details").innerHTML = desc
 let randomExp = Math.floor(Math.random() * (2))
 var usedProj;
-for (i = 0; i < experiences.length; i++) {
+console.log(experiences);
+for (i = 0; i < experiences.length-1; i++) {
   if (randomExp) {
     usedExp = `<div style="background: #FFFFFF;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
@@ -813,12 +824,16 @@ for (i = 0; i < experiences.length; i++) {
     font-size: 18px;
     color: #9B9B9B; margin: 0px;">`+experiences[i].value+`</p></td></tr></table></div>`
     }
+ 
   document.getElementById("exp-flex").innerHTML = document.getElementById("exp-flex").innerHTML + 
   usedExp;
+    
 }
+console.log(document.getElementById("exp-flex"));
 try {
-  document.getElementById("con-em").innerHTML = email
-  document.getElementById("con-so").innerHTML = email
+  document.getElementById("con-em").innerHTML = email;
+  document.getElementById("con-so").innerHTML = email;
+ 
 }
 catch (err) {
   console.log("ERROR ")
@@ -868,9 +883,10 @@ if (randomPill == 2) {
 if (randomPill == 3) {
   pillString = "circleNoFillPill"
 }
-for (i = 0; i < skills.length; i++) {
+console.log(skills);
+for (i = 0; i < skills.length-1; i++) {
   document.getElementById("skills-flex").innerHTML = document.getElementById("skills-flex").innerHTML + 
-  '<div style="display: inline-block;"><p class = "'+ pillString + '">'+ skills[i]+'</p></div>';
+  '<div style="display: inline-block;"><p class = "'+ pillString + '">'+ skills[i].value+'</p></div>';
 }
 try {
 document.getElementById("img-to-convert-1").src = imageToBase64(document.getElementById("img-to-convert-1"));
@@ -954,7 +970,7 @@ try {
       win.document.write('<html><head><title>'+name+'\'s Website</title><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body><scrip'+'t type="text/javascript">'+downloadFunction+'</sc'+'ript><div id="contentOfWebsite">'+code+'</div>'+downloadBanner+styleTag+'</body></html>');
  
       document.body.removeChild(document.getElementById("NEWWEBSITE"))
-    }
+    }         
 function base64Encode(svgCode) {
   utf8Bytes = encodeURIComponent(svgCode).replace(/%([0-9A-F]{2})/g, function(match, p1) {
       return String.fromCharCode('0x' + p1);

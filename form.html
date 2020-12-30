@@ -43,7 +43,7 @@
                 <a href="index.html">
                         <p id="projectName">EasyRez</p>
                 </a>
-                <div id="formOptionsFlex">
+                <div id="formOptionsFlex" style = "display: none; ">
                         <div class="upload-btn-wrapper input-group"
                                 style="width: 353px; height: 163px;background: #FFFFFF;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);border-radius: 7px;">
                                 <textarea id="resumeInputer" name="avatar"
@@ -68,7 +68,7 @@
                 <form class="formMain">
                         <input type="text" name="phoneOfUser" placeholder="Phone Number..." id="phoneOfUser"><br>
                         <input type="text" name="emailOfUser" placeholder="Email..." id="emailOfUser"><br>
-                        <input type="text" name="socialmediaOfUser" placeholder="Social Media..." id="socialmediaOfUser"><br>
+                   <!--     <input type="text" name="socialmediaOfUser" placeholder="Social Media..." id="socialmediaOfUser"><br>-->
 
                 </form>
                 <p class="formHeadline">Skills</p>
@@ -80,15 +80,15 @@
                 
                         </div>
                         </form>
-                <p class="formHeadline">Education</p>
-                <form class="formMain">
+                 <p class="formHeadline" style="display: none;">Education</p>
+                <form class="formMain" style = "display: none;">
                     <div id = "eduz">
                         <input type="text" name="edu1" placeholder="Science, Math, English, Computers, ..."
                                 id="edu1"><br>
                                 <input type = "button" value = "+" onclick = "newEducation();" id ="educationButton">
                             </div>
-                            </form>
-                <p class="formHeadline">Experience</p>
+                            </form> 
+                <p class="formHeadline" >Projects</p>
                 <form class="formMain">
                     <div id = "expz">
                         <input type="text" name="exp1" placeholder="Jobs, internships, volunteer, services, ..."
@@ -96,21 +96,21 @@
                                 <input type = "button" value = "+" onclick = "newExp();" id ="expButton">
                             </div>
                 </form>
-                <p class="formHeadline">Projects</p>
-                <form class="formMain">
+            
+                <form style = "display: none;" class="formMain">
                     <div id = "projectz">
                         <input type="text" name="proj1" placeholder="Projects (e.g. building a website, making a robot, making a drawing, ..."
                                 id="proj1">
                                 <input type = "button" value = "+" onclick = "newProj();" id = "projButton">
                             </div>
-                </form>
-                <div class = "images" id = "images">
+                </form> 
+                <div class = "images" id = "images" style ="display: none;">
                         <input type = "file" ><br>
                         <input type = "button" value = "+" onclick = "newPhoto();" id ="photoButton">
             </div>
                 <a href="javascript:generateWebsite()" style="display: block; margin: auto; text-align: center;"><img src="images/GenerateBTN.svg"  width="200px"/></a>
                  <div id="footer">
-                        <p id="rightsText">© EasyRez 2019</p>
+                        <p id="rightsText">© EasyRez 2020</p>
         </div>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
